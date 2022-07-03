@@ -4,5 +4,9 @@ class UsersController < ApplicationController
   @book=Book.new
  end 
  
+ 
+ 
+ def index
+ end 
 
 end

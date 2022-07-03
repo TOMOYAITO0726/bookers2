@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+   <script src="https://kit.fontawesome.com/a6eebf4e30.js" crossorigin="anonymous"></script>
 
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -27,14 +28,14 @@
           
           <% if user_signed_in? %>
            <li>
-           <%= link_to  root_path, class: "nav-link text-light" do %>
-          <i class="fa-solid fa-house-chimney"></i>Home
+           <%= link_to  root_path, class: "nav-link text-light " do %>
+         <i class="fa fa-home"></i>Home
            <% end %>
             </li>
            
            <li>
-           <%= link_to  destroy_user_session_path, method: :delete,class: "nav-link text-light" do %>
-           <i class="fa-solid fa-book-open"></i>Users
+           <%= link_to  users_path, class: "nav-link text-light" do %>
+           <i class="fa fa-users"></i>Users
            <% end %>
             </li>
            
@@ -67,15 +68,17 @@
             
             <li>
             <%= link_to  new_user_registration_path, class: "nav-link text-light" do %>
-            <i class="fa fa-user-plus fa-w-20"></i> Sign up
-            </li>
-          　<% end %>
-          　
-          　 <li>
-            <%= link_to  user_session_path, class: "nav-link text-light" do %>
-            <i class="fas fa-sign-out-alt"></i> Log in
+            <i class="fa fa-user-plus fa-w-20"></i>Sign up
             <% end %>
             </li>
+          
+          <li>
+                  <%= link_to new_user_session_path, class: "nav-link text-light" do %>
+                    <i class="fas fa-sign-in-alt"></i>login
+                  <% end %>
+                </li>
+
+          
             
   
           <% end %>
