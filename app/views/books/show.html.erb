@@ -1,8 +1,21 @@
-<h2>Books</h2>
+<div class="container px-5 px-sm-0">
+<div class="row">
+<div class="col-md-3">
 
-<% @books.each do |book| %>
+<%=render'books',books: @books %>
+</div>
 
-<p>Title</p>
-<span><%=book.title %></span>
+<div class="col-md-8 offset-md-1">
+<h2>Book detail</h2>
+<table>
+  <tr>
+<td><%=@book.title %></td>
+<td><%=@book.body %></td>
+  </tr>
+</table>
+</div>
+</div>
 
-<% end %>
+
+
+
