@@ -1,14 +1,28 @@
+
+
 <div class="container px-5 px-sm-0">
+ <div id="error_explanation">
+ <% if @book.errors.any? %>
+ <h2><%=@book.errors.count %>errors prohibited this obj from being saved:</h2>
+  <ul>
+   <% @book.errors.full_messages.each do |message| %>
+   <li><%= message %></li>
+   <% end %>
+   </ul>
+<% end %>   
+</div>
+
 <div class="row">
 <div class="col-md-3">
 
-<%=render'books',book: @book, user: @user %>
+<%=render'books',book: @book_new, user: @user %>
 </div>
 
 <div class="col-md-8 offset-md-1">
 <h2>Books</h2>
-<table> 
+<table class="table table-hover table-inverse"> 
  <thead>
+  <th></th>
  <th>Title</th>
  <th>Opinion</th>
  <% @books.each do |book| %>
